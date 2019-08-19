@@ -4,87 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>カロリー計算機</title>
     <link rel="stylesheet" href="common/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="common/js/common.js"></script>
 </head>
 <body>
-    <header class="header">
-        <nav class="header_nav">
-
-        </nav><!-- /.header_nav -->
-    </header><!-- /.header -->
-
     <main class="main">
-        <h1 class="main_heading">俺用ダイエット</h1><!-- /.main_heading -->
+        <h1 class="main_heading">カロリー計算機</h1><!-- /.main_heading -->
 
         <section class="main_section">
             <h2 class="body_heading">基礎代謝を調べる</h2><!-- /.body_heading -->
 
-            <div class="body_gender">
-                <p>性別</p>
-                <p>男性<input type="radio" name="gender" value="male" checked></p>
-                <p>女性<input type="radio" name="gender" value="female"></p>
-            </div><!-- /.body_gender -->
+            <div class="body_section">
+                <h3>性別</h3>
+                <div class="body_section_wrapper">
+                    <label>男性<input type="radio" name="gender" value="male" checked></label>
+                    <label>女性<input type="radio" name="gender" value="female"></label>
+                </div><!-- /.body_section_wrapper -->
+            </div><!-- /.body_section -->
 
-            <div class="body_age">
-                年齢<input type="text" data-body="age">才
-            </div><!-- /.body_age -->
+            <div class="body_section">
+                <h3>年齢</h3>
+                <div class="body_section_wrapper">
+                    <input type="text" data-body="age">才
+                </div><!-- /.body_section_wrapper -->
+            </div><!-- /.body_section -->
 
-            <div class="body_height">
-                身長<input type="text" data-body="height">cm
-            </div><!-- /.body_height -->
+            <div class="body_section">
+                <h3>身長</h3>
+                <div class="body_section_wrapper">
+                    <input type="text" data-body="height">cm
+                </div><!-- /.body_section_wrapper -->
+            </div><!-- /.body_section -->
 
-            <div class="body_weight">
-                体重<input type="text" data-body="weight">kg
-            </div><!-- /.body_weight -->
+            <div class="body_section">
+                <h3>体重</h3>
+                <div class="body_section_wrapper">
+                    <input type="text" data-body="weight">kg
+                </div><!-- /.body_section_wrapper -->
+            </div><!-- /.body_section -->
 
-            <div class="body_fat">
-                体脂肪率<input type="text" data-body="body-fat">%
-            </div><!-- /.body_fat -->
+            <div class="body_section">
+                <h3>体脂肪率</h3>
+                <div class="body_section_wrapper">
+                    <input type="text" data-body="body-fat">%
+                </div><!-- /.body_section_wrapper -->
+            </div><!-- /.body_section -->
 
-            <div>
+            <div class="body_section">
                 <h3>アクティブ度</h3>
-                <ul class="body_active">
-                    <li class="body_active_item">
-                        <input type="radio" name="active" value="low" checked>座り仕事 & 運動をしない
-                    </li><!-- /.body_active_item -->
-                    <li class="body_active_item">
-                        <input type="radio" name="active" value="middle">重労働 or 筋トレをする
-                    </li><!-- /.body_active_item -->
-                    <li class="body_active_item">
-                        <input type="radio" name="active" value="high">重労働 & 筋トレをする
-                    </li><!-- /.body_active_item -->
-                </ul><!-- /.body_active -->
-            </div>
+                <ul class="body_list">
+                    <li class="body_list_item">
+                        <label><input type="radio" name="active" value="low" checked>座り仕事 & 運動をしない</label>
+                    </li><!-- /.body_list_item -->
+                    <li class="body_list_item">
+                        <label><input type="radio" name="active" value="middle">重労働 or 筋トレをする</label>
+                    </li><!-- /.body_list_item -->
+                    <li class="body_list_item">
+                        <label><input type="radio" name="active" value="high">重労働 & 筋トレをする</label>
+                    </li><!-- /.body_list_item -->
+                </ul><!-- /.body_list -->
+            </div><!-- /.body_section -->
 
-            <div>
+            <div class="body_section">
                 <h3>減量の仕方</h3>
-                <ul class="body_diet">
-                    <li class="body_diet_item">
-                        <input type="radio" name="diet" value="carbo" checked>糖質制限
-                    </li><!-- /.body_diet_item -->
-                    <li class="body_diet_item">
-                        <input type="radio" name="diet" value="fat">脂質制限
-                    </li><!-- /.body_diet_item -->
-                </ul><!-- /.body_diet -->
-                <span>※今は機能してない</span>
-            </div>
+                <ul class="body_list">
+                    <li class="body_list_item">
+                        <label><input type="radio" name="diet" value="carbo" checked>糖質制限</label>
+                    </li><!-- /.body_list_item -->
+                    <li class="body_list_item">
+                        <label><input type="radio" name="diet" value="fat">脂質制限</label>
+                    </li><!-- /.body_list_item -->
+                </ul><!-- /.body_list -->
+                <span class="body_lead">※現在機能してない</span><!-- /.body_lead -->
+            </div><!-- /.body_section -->
 
-            <button data-body="button">計算</button>
+            <div class="body_section button" data-body="button">計算スタート</div><!-- /.body_section -->
 
-            <div class="body_wrapper">
-                <p class="body_lean-body">除脂肪体重は約<span data-body="lean-body"></span>kgです。<br><span>※脂肪の除いた体重＝筋肉＋水分＋骨＋内臓</span></p><!-- /.body_lean-body -->
-                <p class="body_base">基礎代謝は約<span data-body="base"></span>kcalです。</p><!-- /.body_base -->
-                <p class="body_kcal">一日の総摂取カロリーは<span data-body="kcal"></span>kcalです。</p><!-- /.body_kcal -->
-                <ul class="body_pfc">
-                    <li class="body_pfc_item">タンパク質は<span data-body="protein"></span>g</li><!-- /.body_pfc_item -->
-                    <li class="body_pfc_item">脂質は<span data-body="fat"></span>g</li><!-- /.body_pfc_item -->
-                    <li class="body_pfc_item">炭水化物は<span data-body="carbo"></span>g</li><!-- /.body_pfc_item -->
-                </ul><!-- /.body_pfc -->
-            </div><!-- /.body_wrapper -->
-            <p><a href="https://calorie.slism.jp/" target="_blank">食事の計算はここで</a></p>
+            <div class="body_section">
+                <ul class="body_list">
+                    <li class="body_list_item">除脂肪体重は約<span data-body="lean-body"></span>kgです。<br><span class="body_lead">※脂肪の除いた体重＝筋肉＋水分＋骨＋内臓</span><!-- /.body_list_item --></p><!-- /.body_lean-body -->
+                    <li class="body_list_item">基礎代謝は約<span data-body="base"></span>kcalです。</p><!-- /.body_list_item -->
+                    <li class="body_list_item">一日の総摂取カロリーは<span data-body="kcal"></span>kcalです。</p><!-- /.body_list_item -->
+                </ul><!-- /.body_list -->
+            </div><!-- /.body_section -->
+
+            <div class="body_section">
+                <ul class="body_list">
+                    <li class="body_list_item">タンパク質は<span data-body="protein"></span>g</li><!-- /.body_list_item -->
+                    <li class="body_list_item">脂質は<span data-body="fat"></span>g</li><!-- /.body_list_item -->
+                    <li class="body_list_item">炭水化物は<span data-body="carbo"></span>g</li><!-- /.body_list_item -->
+                </ul><!-- /.body_list -->
+            </div><!-- /.body_section -->
+            
+            <div class="body_section">
+                <a href="https://calorie.slism.jp/" target="_blank">食事の計算はここで</a>
+            </div><!-- /.body_section -->
         </section><!-- /.main_section -->
     </main><!-- /.main -->
 </body>
