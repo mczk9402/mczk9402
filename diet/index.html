@@ -130,9 +130,17 @@
     </section><!-- /.body_section -->
 
     <section class="body_section">
+        <h3 class="body_section_title">ダイエット方法</h3><!-- /.body_section_title -->
+        <label  class="body_section_gender" v-for="item in diet_items">
+            <input type="radio" v-model="picked" :value="item.value">{{ item.label }}
+        </label><!-- /.body_section_gender -->
+    </section><!-- /.body_section -->
+
+    <section class="body_section">
         <h3 class="body_section_title">測定結果</h3><!-- /.body_section_title -->
-        <div class="body_section_wrapper">
-        </div><!-- /.body_section_wrapper -->
+        <ul class="body_section_result">
+            <li>{{message}}</li>
+        </ul><!-- /.body_section_result -->
     </section><!-- /.body_section -->
 
     </main><!-- /.main -->
@@ -142,6 +150,12 @@
             el: '#app',
             data: {
                 picked: "",
+                age: "",
+                height: "",
+                weight: "",
+                fat: "",
+                test: "",
+                message: "",
                 gender_items: [
                     {
                         value: 'male',
@@ -188,17 +202,18 @@
                         label: '重労働 & 筋トレをする'
                     }
                 ],
-                age: "",
-                height: "",
-                weight: "",
-                fat: "",
-            },
-            computed: {
-                body_value: function() {
-                    return this.body_items[this.class]
-                }
+                diet_items: [
+                    {
+                        value: 'carb-off',
+                        label: '糖質オフ（ケトジェニックダイエット）'
+                    },
+                    {
+                        value: 'fat-off',
+                        label: '脂質オフ'
+                    }
+                ]
             }
-	    })
+        })
     </script>
 </body>
 </html>
