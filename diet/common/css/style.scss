@@ -15,6 +15,7 @@ html {
 
 body {
     overflow-y: scroll;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 1.6rem;
     line-height: 1.0;
     letter-spacing: 0.03em;
@@ -22,6 +23,7 @@ body {
 }
 
 a {
+    text-decoration: none;
     color: #343535;
 }
   
@@ -34,28 +36,30 @@ ul {
     list-style: none;
 }
 
-.main {
-    h1 {
-        padding: $basemargin*2 3%;
-        text-align: center;
-        font-size: 32px;
-        color: #fff;
-        background: #343535;
-    }
+h1 {
+    padding: $basemargin*2 3%;
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    background: #343535;
+}
 
-    h2 {
-        margin-bottom: $basemargin*6;
-        padding-left: 10px;
-        border-left: 5px solid $basecolor;
-    }
+.main {
+    width: 320px;
+    margin: 0 auto;
+    padding: $basemargin*2 $basemargin;
 
     .body {
-        &_section {
-            & + .body_section {
-                margin-top: $basemargin*5;
-            }
+        &_section + .body_section {
+            margin-top: $basemargin*6;
+        }
 
-            h3 {
+        &_section {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: $basecolor;
+
+            &_title {
                 margin-bottom: $basemargin*2;
                 text-align: center;
             }
@@ -66,70 +70,78 @@ ul {
                 align-items:  center;
 
                 input {
-                    margin: 0 $basemargin 0 0;
                     text-align: center;
+                    border-radius: 5px;
+                }
+            }
+
+            &:first-child .body_section_wrapper {
+                justify-content: space-between;
+
+                label + label {
+                    margin-left: $basemargin * 4;
                 }
 
                 label {
-
-                    input {
-                        margin: 0 0 0 $basemargin;
-                    }
+                    width: 100%;
                 }
             }
 
-            &:nth-child(2) .body_section_wrapper {
-                justify-content: space-between;
+            &_list {
+                li + li {
+                    margin-top: $basemargin * 4;
+                }
             }
 
-
-            &.button {
-                cursor: pointer;
-                padding: 20px;
+            &_data {
                 text-align: center;
-                color: #fff;
-                border-radius: 20px;
-                background: $basecolor;
-            }
-        }
 
-        &_list {
-            li + li {
-                margin-top: $basemargin*2;
+                dt:not(:first-child) {
+                    margin-top: $basemargin * 4;
+                }
+
+                dd {
+                    margin-top: $basemargin;
+                }
+            }
+
+            .link {
+                display: block;
+                padding: 20px 0 ;
+                text-align: center;
+                border: 2px solid $basecolor;
+                border-radius: 10px;
             }
             
-            &_item {
-                
+            label {
+                display: block;
+                cursor: pointer;
+                padding: $basemargin * 2;
+                border: 2px solid $basecolor;
+                border-radius: 5px;
 
-                label {
-                    input {
-                        margin-right: $basemargin;
-                    }
+                &.active {
+                    color: #fff;
+                    background: $basecolor
+                }
+
+                // input {
+                //     display: none;
+                // }
+
+                span {
+                    font-size: 1rem;
                 }
             }
-        }
 
-        &_lead {
-            font-size: 10px;
+            input {
+                margin-right: $basemargin;
+                padding: 5px 0;
+                font-size:  1.6rem;
+                font-weight: bold;
+                color: $basecolor;
+            }
         }
     }
     
-}
-
-
-button {
-    padding: 5px 10px;
-}
-
-.main_section {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
-    font-size: 2rem;
-
-    input {
-         padding: 1rem;
-        // text-align: center;
-        // font-size: 2rem;
-    }
 }
