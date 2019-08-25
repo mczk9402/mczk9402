@@ -47,7 +47,7 @@ h1 {
 .main {
     width: 320px;
     margin: 0 auto;
-    padding: $basemargin*2 3%;
+    padding: $basemargin*2 $basemargin;
 
     .body {
         &_section + .body_section {

@@ -42,7 +42,7 @@ h1 {
 .main {
   width: 320px;
   margin: 0 auto;
-  padding: 16px 3%;
+  padding: 16px 8px;
 }
 
 .main .body_section + .body_section {
