@@ -10,6 +10,7 @@ html {
 
 body {
   overflow-y: scroll;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 1.6rem;
   line-height: 1.0;
   letter-spacing: 0.03em;
@@ -17,6 +18,7 @@ body {
 }
 
 a {
+  text-decoration: none;
   color: #343535;
 }
 
@@ -29,7 +31,7 @@ ul {
   list-style: none;
 }
 
-.main h1 {
+h1 {
   padding: 16px 3%;
   text-align: center;
   font-size: 32px;
@@ -37,17 +39,23 @@ ul {
   background: #343535;
 }
 
-.main h2 {
-  margin-bottom: 48px;
-  padding-left: 10px;
-  border-left: 5px solid #343535;
+.main {
+  width: 320px;
+  margin: 0 auto;
+  padding: 16px 3%;
 }
 
 .main .body_section + .body_section {
-  margin-top: 40px;
+  margin-top: 48px;
 }
 
-.main .body_section h3 {
+.main .body_section {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #343535;
+}
+
+.main .body_section_title {
   margin-bottom: 16px;
   text-align: center;
 }
@@ -59,50 +67,67 @@ ul {
 }
 
 .main .body_section_wrapper input {
-  margin: 0 8px 0 0;
   text-align: center;
+  border-radius: 5px;
 }
 
-.main .body_section_wrapper label input {
-  margin: 0 0 0 8px;
-}
-
-.main .body_section:nth-child(2) .body_section_wrapper {
+.main .body_section:first-child .body_section_wrapper {
   justify-content: space-between;
 }
 
-.main .body_section.button {
-  cursor: pointer;
-  padding: 20px;
+.main .body_section:first-child .body_section_wrapper label + label {
+  margin-left: 32px;
+}
+
+.main .body_section:first-child .body_section_wrapper label {
+  width: 100%;
+}
+
+.main .body_section_list li + li {
+  margin-top: 32px;
+}
+
+.main .body_section_data {
   text-align: center;
+}
+
+.main .body_section_data dt:not(:first-child) {
+  margin-top: 32px;
+}
+
+.main .body_section_data dd {
+  margin-top: 8px;
+}
+
+.main .body_section .link {
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  border: 2px solid #343535;
+  border-radius: 10px;
+}
+
+.main .body_section label {
+  display: block;
+  cursor: pointer;
+  padding: 16px;
+  border: 2px solid #343535;
+  border-radius: 5px;
+}
+
+.main .body_section label.active {
   color: #fff;
-  border-radius: 20px;
   background: #343535;
 }
 
-.main .body_list li + li {
-  margin-top: 16px;
+.main .body_section label span {
+  font-size: 1rem;
 }
 
-.main .body_list_item label input {
+.main .body_section input {
   margin-right: 8px;
-}
-
-.main .body_lead {
-  font-size: 10px;
-}
-
-button {
-  padding: 5px 10px;
-}
-
-.main_section {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 30px;
-  font-size: 2rem;
-}
-
-.main_section input {
-  padding: 1rem;
+  padding: 5px 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #343535;
 }
